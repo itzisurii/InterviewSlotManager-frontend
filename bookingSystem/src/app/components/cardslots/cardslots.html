@@ -1,0 +1,26 @@
+<div class="p-3 rounded-xl bg-navy-card/50 backdrop-blur-md border border-white/5 transition-all cursor-pointer group hover:bg-slate-700/40"
+     [ngClass]="{'border-vibrant-red/20 shadow-[0_0_15px_rgba(239,68,68,0.2)]': status === 'conflict'}">
+    
+    <div class="flex justify-between items-start mb-2">
+        <div class="flex flex-col">
+            <span class="text-[10px] font-bold text-vibrant-cyan leading-none uppercase">{{ time }}</span>
+            <span class="text-[8px] font-bold text-vibrant-cyan/60 uppercase">AM</span>
+        </div>
+
+        <span class="px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider"
+              [ngClass]="{
+                'badge-booked': status === 'booked',
+                'badge-available': status === 'available',
+                'badge-conflict': status === 'conflict'
+              }">
+            {{ status }}
+        </span>
+    </div>
+
+    <h4 class="text-xs font-bold truncate text-white leading-snug">
+        {{ title }}
+    </h4>
+    <p class="text-[10px] text-slate-400 mt-1 font-medium">
+        {{ subtitle }}
+    </p>
+</div>

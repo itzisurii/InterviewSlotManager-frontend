@@ -1,0 +1,29 @@
+<div class="bg-navy-sidebar rounded-xl border border-white/5 overflow-x-auto shadow-2xl">
+    <div class="min-w-[1200px]">
+        <div class="grid grid-cols-7 border-b border-white/5 bg-navy-deep/50">
+            <div *ngFor="let day of calendarData" class="p-4 text-center border-r border-white/5 last:border-r-0"
+                [ngClass]="{ 'bg-primary-accent/5': day.day === 'Tue' }">
+                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{{ day.day }}</p>
+                <p class="text-lg font-bold" [class.text-primary-accent]="day.day === 'Tue'"
+                    [class.text-slate-200]="day.day !== 'Tue'">
+                    {{ day.date }}
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 min-h-[600px] bg-navy-sidebar/30 isolate">
+            <div *ngFor="let day of calendarData" class="p-3 border-r border-white/5 last:border-r-0 space-y-3">
+
+                <app-cardslots class="p-4" *ngFor="let interview of day.interviews" [time]="interview.time"
+                    [status]="$any(interview.status)" [title]="interview.title" [subtitle]="interview.subtitle">
+                </app-cardslots>
+
+                <div *ngIf="day.interviews.length === 0"
+                    class="flex flex-col items-center justify-center h-40 opacity-20">
+                    <span class="material-symbols-outlined text-4xl mb-2 text-slate-400">event_busy</span>
+                    <p class="text-[10px] font-medium text-center text-slate-400">No interviews</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

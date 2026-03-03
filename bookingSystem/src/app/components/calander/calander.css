@@ -1,0 +1,29 @@
+@reference "../../../styles.css";
+
+/* Booked - Cyan Glow */
+.badge-booked {
+    @apply bg-transparent text-vibrant-cyan border border-vibrant-cyan/50 rounded-md;
+    /* Inner glow + Outer neon bloom */
+    box-shadow: 
+        inset 0 0 4px rgba(6, 182, 212, 0.4),
+        0 0 12px -2px rgba(6, 182, 212, 0.7);
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+}
+
+/* Available - Green Glow */
+.badge-available {
+    @apply bg-transparent text-vibrant-green border border-vibrant-green/50 rounded-md;
+    box-shadow: 
+        inset 0 0 4px rgba(34, 197, 94, 0.4),
+        0 0 12px -2px rgba(34, 197, 94, 0.7);
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+}
+
+/* Conflict - Red Glow */
+.badge-conflict {
+    @apply bg-transparent text-vibrant-red border border-vibrant-red/50 rounded-md;
+    box-shadow: 
+        inset 0 0 4px rgba(239, 68, 68, 0.4),
+        0 0 12px -2px rgba(239, 68, 68, 0.7);
+    text-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
